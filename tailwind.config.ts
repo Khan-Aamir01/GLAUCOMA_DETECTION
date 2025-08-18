@@ -18,6 +18,22 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				manrope: ['Manrope', 'Inter', 'sans-serif'],
+				inter: ['Inter', 'sans-serif'],
+			},
+			backgroundImage: {
+				'gradient-medical': 'var(--gradient-medical)',
+				'gradient-accent': 'var(--gradient-accent)', 
+				'gradient-subtle': 'var(--gradient-subtle)',
+			},
+			boxShadow: {
+				'medical': 'var(--shadow-medical)',
+				'accent': 'var(--shadow-accent)',
+			},
+			transitionTimingFunction: {
+				'medical': 'var(--transition-medical)',
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',

@@ -6,25 +6,25 @@ export const Footer = () => {
           <div className="flex flex-wrap items-center justify-center md:justify-start gap-8">
             <a 
               href="#" 
-              className="text-muted-foreground hover:text-primary transition-medical"
+              className="text-muted-foreground hover:text-primary transition-medical text-gray-100"
             >
               Privacy Policy
             </a>
             <a 
               href="#" 
-              className="text-muted-foreground hover:text-primary transition-medical"
+              className="text-muted-foreground hover:text-primary transition-medical text-gray-100"
             >
               Terms
             </a>
             <a 
               href="#" 
-              className="text-muted-foreground hover:text-primary transition-medical"
+              className="text-muted-foreground hover:text-primary transition-medical text-gray-100"
             >
               Contact
             </a>
           </div>
           
-          <p className="text-center md:text-right text-muted-foreground text-sm">
+          <p className="text-center md:text-right text-muted-foreground text-sm text-gray-100" >
             © 2024 GlaucoScan. All rights reserved.
           </p>
         </div>

@@ -12,19 +12,20 @@ export const HeroSection = () => {
               <span className="text-primary">Glaucoma</span>{" "}
               with AI
             </h1>
-            <p className="text-xl text-muted-foreground leading-relaxed">
-              Upload a fundus image, get results in seconds.
-            </p>
+            <p className="text-xl leading-relaxed bg-black/40 text-white rounded-lg p-2 inline-block">
+  Upload a fundus image, get results in seconds.
+</p>
+
           </div>
           <Button variant="hero" size="lg" className="text-lg">
             Upload Eye Image
           </Button>
         </div>
-        
+
         <div className="relative">
           <div className="aspect-video rounded-2xl overflow-hidden shadow-medical bg-gradient-subtle">
-            <img 
-              src={heroImage} 
+            <img
+              src={heroImage}
               alt="Professional eye examination for glaucoma detection"
               className="w-full h-full object-cover"
             />

@@ -36,7 +36,7 @@ export const HowItWorks = () => {
                 </div>
                 <div className="space-y-2">
                   <h3 className="text-lg font-semibold">{step.title}</h3>
-                  <p className="text-sm text-muted-foreground">{step.description}</p>
+                  <p className="text-sm text-muted-foreground text-gray-100">{step.description}</p>
                 </div>
               </CardContent>
             </Card>

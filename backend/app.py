@@ -1,28 +1,33 @@
-from flask import Flask,request
-import os
+from flask import Flask, request, jsonify
 from werkzeug.utils import secure_filename
+import os
 import random
-from flask_cors import CORS
-app = Flask(__name__)
-CORS(app)
-@app.route('/')
-def home():
-    return "Hello, Flask!"
+from flask_cors import CORS  
 
-@app.route('/upload-image',methods=['POST'])
+app = Flask(__name__)
+CORS(app)  
+
+UPLOAD_FOLDER = 'uploads'
+os.makedirs(UPLOAD_FOLDER, exist_ok=True)
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER  
+
+@app.route('/upload-image', methods=['POST'])
 def upload_image():
     if 'image' not in request.files:
-        return jsonify({"error":"Image not provided"}),400
-    file = request.files['image']    
+        return jsonify({"error": "No image part in the request"}), 400
+
+    file = request.files['image']
+
     if file.filename == '':
-        return jsonify({"error":"Image Not Selected"}),400
+        return jsonify({"error": "No image selected"}), 400
+
     filename = secure_filename(file.filename)
     filepath = os.path.join(app.config['UPLOAD_FOLDER'], filename)
-    file.save(filename)
+    file.save(filepath)
 
-    # Dummy model prediction: randomly return 0 or 1
-    prediction = random.choice([0, 1])  # 0 = false, 1 = true
-
+    # dummy prediction
+    prediction = random.choice([0, 1])
+    print(prediction)
     return jsonify({
         "filename": filename,
         "prediction": prediction,

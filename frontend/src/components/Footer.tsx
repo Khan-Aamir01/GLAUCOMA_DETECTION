@@ -25,7 +25,7 @@ export const Footer = () => {
           </div>
           
           <p className="text-center md:text-right text-muted-foreground text-sm text-white" >
-            © 2024 GlaucoScan. All rights reserved.
+            © 2025 Thousand Sunny &#128526;. All rights reserved.
           </p>
         </div>
       </div>

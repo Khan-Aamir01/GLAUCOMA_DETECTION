@@ -26,7 +26,7 @@ const faqs = [
 
 export const FAQSection = () => {
   return (
-    <section className="container py-20">
+    <section id="faq" className="container py-20">
       <div className="space-y-12 max-w-3xl mx-auto">
         <h2 className="text-3xl font-bold font-manrope text-center">FAQ</h2>
         

@@ -16,13 +16,13 @@ export const Header = () => {
           <a href="#" className="text-sm font-medium hover:text-primary transition-medical">
             Home
           </a>
-          <a href="#" className="text-sm font-medium hover:text-primary transition-medical">
+          <a href="#upload" className="text-sm font-medium hover:text-primary transition-medical">
             Upload
           </a>
-          <a href="#" className="text-sm font-medium hover:text-primary transition-medical">
+          <a href="#result" className="text-sm font-medium hover:text-primary transition-medical">
             Results
           </a>
-          <a href="#" className="text-sm font-medium hover:text-primary transition-medical">
+          <a href="#faq" className="text-sm font-medium hover:text-primary transition-medical">
             FAQ
           </a>
         </nav>

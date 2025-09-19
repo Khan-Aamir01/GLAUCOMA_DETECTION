@@ -1,32 +1,49 @@
 import { Card, CardContent } from "@/components/ui/card";
-import retinalImage from "@/assets/retinal-analysis.jpg";
 
-export const ResultsCard = () => {
+interface ResultsCardProps {
+  imageUrl: string;           // preview of uploaded image
+  prediction: number;         // 0 or 1 from API
+}
+
+export const ResultsCard = ({ imageUrl, prediction }: ResultsCardProps) => {
+  // determine message based on prediction
+  const isGlaucoma = prediction === 1;
+
   return (
-    <section className="container py-16">
+    <section id="result" className="container py-16">
       <Card className="bg-card border-border shadow-medical">
         <CardContent className="p-8">
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div className="space-y-4">
-              <p className="text-muted text-sm font-medium font-bold uppercase tracking-wide text-white">
+              <p className="text-muted text-2xl font-medium font-bold uppercase tracking-wide text-white">
                 Results
               </p>
               <div className="space-y-2">
                 <h3 className="text-2xl font-bold">
-                  Cup-to-Disc Ratio (CDR): <span className="text-primary">0.72</span>
+                  Status:{" "}
+                  <span className={isGlaucoma ? "text-red-600" : "text-green-600"}>
+                    {isGlaucoma ? "⚠️ Possible Glaucoma Detected" : "✅ No Glaucoma Detected"}
+                  </span>
                 </h3>
-                <p className="text-destructive font-medium">Risk: High</p>
-                <p className="text-sm text-muted-foreground text-white">
-                  A CDR of 0.72 indicates elevated glaucoma risk. Please consult an ophthalmologist for comprehensive evaluation.
-                </p>
+                {isGlaucoma ? (
+                  <p className="text-destructive font-medium">
+                    “The analysis suggests signs consistent with glaucoma in the uploaded image.
+                    This is an AI-generated risk assessment and not a medical diagnosis.
+                    We strongly recommend consulting an ophthalmologist or eye-care specialist for a comprehensive evaluation and confirmation.”
+                  </p>
+                ) : <p className="text-destructive font-medium">
+                  “The analysis indicates no signs of glaucoma in the uploaded image.
+                  However, AI predictions are not a substitute for a professional diagnosis. If you have concerns
+                  about your vision or eye health, please consult a qualified ophthalmologist.
+                </p>}
               </div>
             </div>
-            
+
             <div className="relative">
               <div className="aspect-video rounded-xl overflow-hidden bg-gradient-subtle">
-                <img 
-                  src={retinalImage} 
-                  alt="Retinal analysis showing cup-to-disc ratio measurement"
+                <img
+                  src={imageUrl}
+                  alt="Uploaded retinal image"
                   className="w-full h-full object-cover"
                 />
               </div>

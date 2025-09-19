@@ -36,7 +36,7 @@ export const BenefitsSection = () => {
                 </div>
                 <div className="space-y-2">
                   <h3 className="text-lg font-semibold">{benefit.title}</h3>
-                  <p className="text-sm text-muted-foreground text-gray-100">{benefit.description}</p>
+                  <p className="text-sm text-muted-foreground text-white">{benefit.description}</p>
                 </div>
               </CardContent>
             </Card>

@@ -8,7 +8,7 @@ export const ResultsCard = () => {
         <CardContent className="p-8">
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div className="space-y-4">
-              <p className="text-muted text-sm font-medium uppercase tracking-wide text-gray-100">
+              <p className="text-muted text-sm font-medium font-bold uppercase tracking-wide text-white">
                 Results
               </p>
               <div className="space-y-2">
@@ -16,7 +16,7 @@ export const ResultsCard = () => {
                   Cup-to-Disc Ratio (CDR): <span className="text-primary">0.72</span>
                 </h3>
                 <p className="text-destructive font-medium">Risk: High</p>
-                <p className="text-sm text-muted-foreground text-gray-100">
+                <p className="text-sm text-muted-foreground text-white">
                   A CDR of 0.72 indicates elevated glaucoma risk. Please consult an ophthalmologist for comprehensive evaluation.
                 </p>
               </div>

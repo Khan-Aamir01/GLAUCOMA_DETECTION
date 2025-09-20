@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Stethoscope } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export const Header = () => {
   return (
@@ -11,7 +12,7 @@ export const Header = () => {
           </div>
           <h1 className="text-xl font-bold font-manrope">GlaucoScan</h1>
         </div>
-        
+
         <nav className="hidden md:flex items-center gap-8">
           <a href="#" className="text-sm font-medium hover:text-primary transition-medical">
             Home
@@ -26,8 +27,10 @@ export const Header = () => {
             FAQ
           </a>
         </nav>
-        
-        <Button variant="hero">Sign In / Sign Up</Button>
+
+        <Link to="/auth">
+          <Button variant="hero">Sign In / Sign Up</Button>
+        </Link>
       </div>
     </header>
   );
